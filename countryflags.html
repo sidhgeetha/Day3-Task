@@ -1,0 +1,40 @@
+<html>
+    <body>
+        <script>
+            URL ="https://restcountries.com/v3.1/all";
+            const xhr = new XMLHttpRequest();
+
+            xhr.open("GET",URL); // configure Method and URL
+            xhr.send(); // Send the request to server and get the response
+            console.log(xhr);
+
+            xhr.onreadystatechange = () => {
+                console.log(xhr.readyState)
+            }
+
+            xhr.onprogress = () => {
+                console.log("Loading the data.......")
+            }
+
+
+            xhr.onload = () => {
+                
+                console.log(JSON.parse(xhr.response))
+
+
+                const result_array = JSON.parse(xhr.response); // xhr.response => Array[obj1,obj2,....]
+
+                // {
+                //     "key" : "value"
+                // }
+
+                for(let index in result_array){
+                    const obj = result_array[index]; // array[0]
+                     console.log(obj.flag)
+                }
+            }
+
+        </script>
+    </body>
+</html>
+
