@@ -30,23 +30,18 @@
 
                 for(let index in result_array){
                     const obj = result_array[index]; // array[0]
-                    // console.log(obj.flag)
-                    // console.log(obj.region)
-                    // console.log(obj.capital)
-                    // countries, regions, sub regions and populations
-                    // let country = ""
 
-                    if (obj.altSpellings[1] === undefined) {
-                        country = obj.altSpellings[0]
-                    }
-                    else
-                    {
-                        country = obj.altSpellings[1]
-                    }
+                    for(let ind of result_array){
+                     console.log(ind.name.common)
+                     console.log(obj.region)
+                console.log(obj.subregion)
+                console.log(obj.population)
+                }
+               
+                //     // get countries, regions, sub regions and populations
+                
 
-                    // var country = (obj.altSpellings[1]  === undefined) ? obj.altSpellings[0] : obj.altSpellings[1];
-
-                    console.log(country + ',' + obj.subregion + ',' + obj.population)
+                //     console.log( +obj.region + ',' + obj.subregion + ',' + obj.population)
                 }
 
             }
